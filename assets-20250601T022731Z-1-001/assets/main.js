@@ -17,7 +17,7 @@ function addItem(){
     
     document.querySelector("#item").value = ""
 
-  showItemsList()
+  showItemsList().add
 }
 
 function showItemsList(){
