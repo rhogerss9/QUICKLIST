@@ -44,4 +44,18 @@ function showItemsList(){
             </div>
         `
     })
+    localStorage.setItem("items", JSON.stringify(items))
 }
+
+function removeItem(itemName){
+const itemIndex = items.findIndex((item) => item.name === itemName)
+
+console.log(itemIndex)
+
+if (itemIndex !== -1){
+    items.splice(itemIndex, 1)
+}
+
+showItemsList()
+}
+
