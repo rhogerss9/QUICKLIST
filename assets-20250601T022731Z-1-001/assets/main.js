@@ -17,14 +17,13 @@ function addItem(){
     
     document.querySelector("#item").value = ""
 
-  showItemsList().add
+  showItemsList()
 }
 
 function showItemsList(){
     const sectionList = document.querySelector(".list") 
     sectionList.innerHTML = ""
 
-    
     items.sort((itemA, itemB)=> Number(itemA.checked) - Number(itemB.checked))
     
 
@@ -45,7 +44,14 @@ function showItemsList(){
             </div>
         `
     })
+
     localStorage.setItem("items", JSON.stringify(items))
+}
+
+function checkItem(itemName){
+const item = items.find((item )=> item.name === itemName)
+item.checked = !item.checked
+showItemsList()
 }
 
 function removeItem(itemName){
@@ -58,9 +64,7 @@ setTimeout(() => {
     divWarning.classList.add("hide-warning")
 }, 4000)
 
-console.log(itemIndex)
-
-if (itemIndex !== -1){
+if(itemIndex !==-1){
     items.splice(itemIndex, 1)
 }
 
@@ -69,12 +73,6 @@ showItemsList()
 
 function addHideWarningClass(){
     document.querySelector(".warning").classList.add("hide-warning")
-}
-
-function checkItem(itemName){
-const item = items.find((item )=> item.name === itemName)
-item.checked = !item.checked
-showItemsList()
 }
 
 function verifyLocalStorage(){
