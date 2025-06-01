@@ -66,3 +66,7 @@ if (itemIndex !== -1){
 showItemsList()
 }
 
+function addHideWarningClass(){
+    document.querySelector(".warning").classList.add("hide-warning")
+}
+
