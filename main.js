@@ -33,13 +33,13 @@ function showItemsList(){
                 <div>
                     <input type="checkbox" name="list" id="item-${index}" ${item.checked === true ? "checked" : ""}>
                 <div class="custom-checkbox" onclick="checkItem('${item.name}')">
-                    <img src="checked.svg" alt="checked">
+                    <img src="img/checked.svg" alt="checked">
                 </div>
                 <label for="item-${index}" onclick="checkItem('${item.name}')">${item.name}</label>
 
                 </div>
                 <button onclick = "removeItem('${item.name}')">
-                    <img src="trash-icon.svg" alt="trash icon">
+                    <img src="img/trash-icon.svg" alt="trash icon">
                 </button>
             </div>
         `
