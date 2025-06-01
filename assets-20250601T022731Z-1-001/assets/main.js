@@ -76,3 +76,13 @@ item.checked = !item.checked
 showItemsList()
 }
 
+function verifyLocalStorage(){
+ const localStorageItems = localStorage.getItem("items")
+
+ if(localStorageItems){
+   items = JSON.parse(localStorageItems)
+   showItemsList()
+ }
+}
+
+verifyLocalStorage()
